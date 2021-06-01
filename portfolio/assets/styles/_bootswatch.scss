@@ -9,6 +9,10 @@ $web-font-path: "https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0
 }
 
 // Typography
+.progress-label {
+  float: left;
+  margin-right: 1em;
+}
 
 .blockquote {
   &-footer {
