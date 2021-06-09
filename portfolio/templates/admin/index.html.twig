@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!
+{% endblock %}
+
+{% block body %}
+	<div class="container mt-4">
+		<h1>Gerer du texte</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>id</th>
+					<th>Contenu</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for User in users %}
+					<tr>
+						<td>{{User.id}}</td>
+						<td>{{User.email}}</td>
+						<td>
+							<a href="{{ path('admin.text.edit', {id: User.id}) }}" class="btn btn-secondary">Editer</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+{% endblock %}

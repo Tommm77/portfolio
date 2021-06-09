@@ -2,24 +2,23 @@
 
 namespace App\Form;
 
-use App\Entity\Text;
+use App\Entity\User;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
-class TextType extends AbstractType
+class UserType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('contenu', CKEditorType::class);
+            ->add('email');
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Text::class,
+            'data_class' => User::class,
         ]);
     }
 }
