@@ -5,12 +5,15 @@
 
 {% block body %}
 	<div class="container mt-4">
-		<h1>Gerer du texte</h1>
+		<center>
+			<h1>Gerer du texte</h1>
+		</center>
 		<table class="table table-striped">
 			<thead>
 				<tr>
 					<th>id</th>
 					<th>Contenu</th>
+					<th>Rôles</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -20,7 +23,19 @@
 						<td>{{User.id}}</td>
 						<td>{{User.email}}</td>
 						<td>
-							<a href="{{ path('admin.text.edit', {id: User.id}) }}" class="btn btn-secondary">Editer</a>
+							<div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+								<button type="button" class="btn btn-danger" control-id="ControlID-77">Rôles</button>
+								<div class="btn-group" role="group">
+									<button id="btnGroupDrop4" type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" control-id="ControlID-78"></button>
+									<div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+										<a class="dropdown-item" href="#">1</a>
+										<a class="dropdown-item" href="#">2</a>
+									</div>
+								</div>
+							</div>
+						</td>
+						<td>
+							<a href="{{ path('admin.text.edit', {id: User.id}) }}" class="btn btn-warning">Editer</a>
 						</td>
 					</tr>
 				{% endfor %}
