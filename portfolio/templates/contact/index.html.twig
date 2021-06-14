@@ -1,20 +1,19 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Hello ContactController!{% endblock %}
-
+{% extends "base.html.twig" %}
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/Users/Tom/Desktop/Symfony/sites/labs/portfolio/src/Controller/ContactController.php'|file_link(0) }}">src/Controller/ContactController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/Users/Tom/Desktop/Symfony/sites/labs/portfolio/templates/contact/index.html.twig'|file_link(0) }}">templates/contact/index.html.twig</a></code></li>
-    </ul>
+	<div class="container mt4">
+		<h2>Me Contacter</h2>
+		{% form_theme form 'bootstrap_4_horizontal_layout.html.twig' %}
+		{{ form_start(form) }}
+		{{ form_row(form.email)}}
+		{{ form_row(form.nom)}}
+		{{ form_row(form.message)}}
+	</div>
 </div>
-{% endblock %}
+<div class="form-group">
+	<center>
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<div class="g-recaptcha" data-sitekey="6LfMtiEbAAAAAEQC1_WZFFV8nOGMZLTzwvOH4XC0"></div>
+		<input type="submit" value="Send" class=" btn btn-warning py-3 px-5"></center>
+</div>
+
+{{ form_end(form) }}</div></div>{% endblock %}

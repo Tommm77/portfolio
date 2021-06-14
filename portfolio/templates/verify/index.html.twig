@@ -11,6 +11,7 @@
 				<tr>
 					<th>id</th>
 					<th>Contenu</th>
+					<th>Code</th>
 					<th>Actions</th>
 				</tr>
 			</thead>
@@ -18,7 +19,8 @@
 				{% for Text in texts %}
 					<tr>
 						<td>{{Text.id}}</td>
-						<td>{{Text.contenu}}</td>
+						<td>{{Text.contenu | raw}}</td>
+						<td>{{Text.code}}</td>
 						<td>
 							<a href="{{ path('verify.text.edit', {id: Text.id}) }}" class="btn btn-secondary">Editer</a>
 						</td>
